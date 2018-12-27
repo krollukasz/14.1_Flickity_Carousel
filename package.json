@@ -15,10 +15,8 @@
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-
     "watch": "npm-run-all build -s watch:*",
     "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all build-dev:sass build:autoprefixer",
-
     "watch:browser-sync": "browser-sync start --server --files 'css/*.css' '*.html'"
   },
   "keywords": [],
@@ -27,7 +25,9 @@
     "last 5 versions"
   ],
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "mustache": "^3.0.1"
+  },
   "devDependencies": {
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.26.3",

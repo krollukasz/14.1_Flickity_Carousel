@@ -81,6 +81,3 @@ typings/
 
 #.sass-cache directory
 .sass-cache
-
-# vendor directory
-vendor

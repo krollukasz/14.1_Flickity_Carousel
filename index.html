@@ -20,6 +20,16 @@
     </p>
 
     <div class="main-carousel" data-flickity='{ "hash": true }'>
+
+      <script id="carousel-template" type="x-tmpl-mustache">
+        <div class="carousel-cell" style="background-image: url ({{ image }})">
+          <div class="container">
+            <h1> {{ title }} </h1>
+            <p> {{{ description }}}
+          </div>
+        <div>
+      </script>
+
       <div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://cdn.pixabay.com/photo/2014/05/02/20/32/concrete-336306_960_720.jpg)">
         <div class="container">
           <img src="https://wallpapercave.com/wp/wp1844718.jpg" alt="Hennessey Venom GT Spyder">
@@ -56,6 +66,7 @@
     </div>
 
     <script src="vendor/flickity.pkgd.min.js"></script>
+    <script src="vendor/mustache.js"></script>
     <script src="js/hash.js"></script>
     <script src="js/script.js"></script>
   </body>

@@ -1,5 +1,23 @@
 "use strict";
 
+// Mustache
+
+var templateCarousel = document.getElementById("carousel-template");
+var carousel = document.getElementsByClassName(".main-carousel");
+
+Mustache.parse(templateCarousel);
+var carouselElements = "";
+
+for ( var i = 0; i < slideData.length; i++) {
+  console.log(slideData);
+  carouselElements += Mustache.render(templateCarousel, slideData[i]);
+}
+
+var fullSlide = Mustache.render(templateCarousel, carouselElements);
+
+carousel.innerHTML = carouselElements;
+
+// Flickity
 // Initialize carousel
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {

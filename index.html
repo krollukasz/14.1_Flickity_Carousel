@@ -22,11 +22,11 @@
     <div class="main-carousel" data-flickity='{ "hash": true }'></div>
 
     <script id="carousel-template" type="x-tmpl-mustache">
-        <div class="carousel-cell" style="background-image: url ({{ image }})">
-          <div class="container">
-            <h1> {{ title }} </h1>
-            {{{ description }}}
-          </div>
+        <div style='background-image: url("{{image}}")'>
+          <div class="carousel-cell" style='background-image: url("{{image}}")'>
+              <h1> {{ title }} </h1>
+              <p> {{ description }} </p>
+          <div>
         <div>
       </script>
 
@@ -35,28 +35,27 @@
           {
             image: "images/Hennessey Venom GT Spyder.jpg",
             title: "Hennessey Venom GT Spyder",
-            description: "<p>Lorem ipsum.</p>"
-            
+            description: "Max speed - 435 km/h"
           },
           {
             image: "images/Bugatti Veyron SuperSport.jpg",
             title: "Bugatti Veyron SuperSport",
-            description: "<p>Max speed - 431 km/h</p>"
+            description: "Max speed - 431 km/h"
           },
           {
             image: "images/Koenigsegg Agera One.jpg",
             title: "Koenigsegg Agera One",
-            description: "<p>Max speed - 430 km/h</p>"
+            description: "Max speed - 430 km/h"
           },
           {
             image: "images/SSC Tuatara.jpg",
             title: "SSC Tuatara",
-            description: "<p>Max speed - 430 km/h</p>"
+            description: "Max speed - 430 km/h"
           },
           {
             image: "images/9ff GT9.jpg",
             title: "9ff GT9",
-            description: "<p>Max speed - 409 km/h</p>"
+            description: "Max speed - 409 km/h"
           },
         ]
       </script>

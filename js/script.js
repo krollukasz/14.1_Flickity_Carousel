@@ -2,18 +2,13 @@
 
 // Mustache
 
-var templateCarousel = document.getElementById("carousel-template");
-var carousel = document.getElementsByClassName(".main-carousel");
-
-Mustache.parse(templateCarousel);
+var templateCarousel = document.getElementById("carousel-template").innerHTML;
+var carousel = document.querySelector(".main-carousel");
 var carouselElements = "";
 
 for ( var i = 0; i < slideData.length; i++) {
-  console.log(slideData);
   carouselElements += Mustache.render(templateCarousel, slideData[i]);
 }
-
-var fullSlide = Mustache.render(templateCarousel, carouselElements);
 
 carousel.innerHTML = carouselElements;
 
@@ -32,7 +27,6 @@ flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
 });
-
 
 // Photo description
 var flkty = new Flickity( '.main-carousel', {

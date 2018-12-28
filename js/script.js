@@ -17,7 +17,10 @@ carousel.innerHTML = carouselElements;
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   cellAlign: 'left',
-  contain: true
+  contain: true,
+  hash: true,
+  imagesLoaded: true,
+  percentPosition: false
 });
 
 // Progress bar
@@ -29,11 +32,6 @@ flkty.on( 'scroll', function( progress ) {
 });
 
 // Photo description
-var flkty = new Flickity( '.main-carousel', {
-  imagesLoaded: true,
-  percentPosition: false
-});
-
 var caption = document.querySelector('.caption');
 
 flkty.on( 'select', function() {

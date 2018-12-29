@@ -51,3 +51,35 @@ buttonGroup.addEventListener('click', function (event) {
   var index = buttons.indexOf(event.target);
   flkty.select(index);
 });
+
+// Google map
+(function(){ 
+	
+  	window.initMap = function() {
+      var mapLocation = slideData[i].coords;  
+		
+		// Map zoom and center
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 14,
+			center: mapLocation
+		});
+    
+    for ( i = 0; i < slideData.length; i++) {
+      var markers = new google.maps.Marker({
+        position: mapLocation
+        map: map
+        id: i
+      })
+      maker[i].addListener("click", function(){
+        // zmiana lokalizacji na mapie
+      })
+      
+    };
+    
+
+    // markers[i].addListener("click", function({
+      // flkty.select(id)
+    // }));
+	}	
+	 
+})();  

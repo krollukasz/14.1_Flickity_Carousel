@@ -11,6 +11,8 @@
   </head>
 
   <body>
+
+    <!-- Top links -->
     <p class="hash-links">
       <a href="#carousel-cell1">Photo 1</a>
       <a href="#carousel-cell2">Photo 2</a>
@@ -19,8 +21,13 @@
       <a href="#carousel-cell5">Photo 5</a>
     </p>
 
+    <!-- Flickity carousel -->
     <div class="main-carousel"></div>
 
+    <!-- Google map -->
+    <div id="map" class="google-map"></div>
+
+    <!-- Mustache slide template -->
     <script id="carousel-template" type="x-tmpl-mustache">
       <div class="carousel-cell" style='background-image: url("{{image}}")'>
         <div class="container">
@@ -35,35 +42,43 @@
           {
             image: "images/Hennessey Venom GT Spyder.jpg",
             title: "Hennessey Venom GT Spyder",
-            description: "Max speed - 435 km/h"
+            description: "Max speed - 435 km/h",
+            coords: {lat: 45.621, lng: 9.285}
           },
           {
             image: "images/Bugatti Veyron SuperSport.jpg",
             title: "Bugatti Veyron SuperSport",
-            description: "Max speed - 431 km/h"
+            description: "Max speed - 431 km/h",
+            coords: {lat: 41.569, lng: 2.257}
           },
           {
             image: "images/Koenigsegg Agera One.jpg",
             title: "Koenigsegg Agera One",
-            description: "Max speed - 430 km/h"
+            description: "Max speed - 430 km/h",
+            coords: {lat: 52.071, lng: -1.016}
           },
           {
             image: "images/SSC Tuatara.jpg",
             title: "SSC Tuatara",
-            description: "Max speed - 430 km/h"
+            description: "Max speed - 430 km/h",
+            coords: {lat: 24.467, lng: 54.606}
           },
           {
             image: "images/9ff GT9.jpg",
             title: "9ff GT9",
-            description: "Max speed - 409 km/h"
+            description: "Max speed - 409 km/h",
+            coords: {lat: 1.291, lng: 103.863}
           },
         ]
       </script>
 
+    <!-- Progress bar -->
     <div class="progress-bar"></div>
 
+    <!-- Photo description -->
     <p class="caption"> </p>
 
+    <!-- Restart button -->
     <div class="button-group">
       <button class="restart-button">Restart</button>
     </div>
@@ -72,5 +87,6 @@
     <script src="vendor/mustache.js"></script>
     <script src="js/hash.js"></script>
     <script src="js/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo6c-aGlcyB9fuBj3cl5OZdvAxyo5JiMk&callback=initMap"></script>
   </body>
 </html>

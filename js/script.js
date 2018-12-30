@@ -54,26 +54,30 @@ buttonGroup.addEventListener('click', function (event) {
 
 // Google map
 
-(function(){ 
-	
-  	window.initMap = function() {
-      var mapLocation = slideData[i].coords;  
-		
-		// Map zoom and center
-		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 14,
-			center: mapLocation
+(function() {
+  window.initMap = function() {
+
+    var mapLocation = slideData[0].coords;
+
+    // Map zoom and center
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: mapLocation
     });
-    
+
     var markers = [];
-    for ( var i = 0; i < slideData.length; i++) {
+    for ( var i = 0; i < slideData.length; i++ ) {
       markers.push(new google.maps.Marker({
         position: slideData[i].coords,
         map: map,
         id: i
-      }))
-      markers[i].addListener("click", function(){
-        // display map after slide change
-      })
-    };
-  }});
+      }));
+
+      // Change map position after slide change
+      flkty.on('change', function(index) {
+        map.panTo(slideData[index].coords);
+        map.setZoom(12);
+      });
+    }
+  };
+})();

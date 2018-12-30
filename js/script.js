@@ -53,6 +53,7 @@ buttonGroup.addEventListener('click', function (event) {
 });
 
 // Google map
+
 (function(){ 
 	
   	window.initMap = function() {
@@ -62,24 +63,17 @@ buttonGroup.addEventListener('click', function (event) {
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 14,
 			center: mapLocation
-		});
+    });
     
-    for ( i = 0; i < slideData.length; i++) {
-      var markers = new google.maps.Marker({
-        position: mapLocation
-        map: map
+    var markers = [];
+    for ( var i = 0; i < slideData.length; i++) {
+      markers.push(new google.maps.Marker({
+        position: slideData[i].coords,
+        map: map,
         id: i
+      }))
+      markers[i].addListener("click", function(){
+        // display map after slide change
       })
-      maker[i].addListener("click", function(){
-        // zmiana lokalizacji na mapie
-      })
-      
     };
-    
-
-    // markers[i].addListener("click", function({
-      // flkty.select(id)
-    // }));
-	}	
-	 
-})();  
+  }});

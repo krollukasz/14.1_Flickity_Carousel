@@ -72,10 +72,9 @@ buttonGroup.addEventListener('click', function (event) {
         map: map,
         id: i
       }))
-          markers[i].addListener("click", function() {
-            flkty.select(this.id)
-          });
-      // );
+      markers[i].addListener("click", function() {
+        flkty.select(this.id)
+      });
 
       // Change map position after slide change
       flkty.on('change', function(index) {

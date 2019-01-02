@@ -4,7 +4,10 @@
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   cellAlign: 'left',
-  contain: true
+  contain: true,
+  hash: true,
+  imagesLoaded: true,
+  percentPosition: false
 });
 
 // Progress bar
@@ -13,19 +16,6 @@ var progressBar = document.querySelector('.progress-bar')
 flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
-});
-
-
-// Photo description
-var flkty = new Flickity( '.main-carousel', {
-  imagesLoaded: true,
-  percentPosition: false
-});
-
-var caption = document.querySelector('.caption');
-
-flkty.on( 'select', function() {
-  caption.textContent = flkty.selectedElement.alt;
 });
 
 // Reset button
@@ -39,5 +29,5 @@ buttonGroup.addEventListener('click', function (event) {
       return;
   }
   var index = buttons.indexOf(event.target);
-  flkty.select(index);
+  flkty.select(0);
 });

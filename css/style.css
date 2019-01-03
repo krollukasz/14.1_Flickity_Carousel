@@ -13,8 +13,15 @@ body {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+}
+
+.container h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.container p {
+  padding-top: 10px;
 }
 
 .hash-links {
@@ -34,7 +41,6 @@ body {
 .carousel-cell {
   width: 100%;
   height: 500px;
-  margin-right: 10px;
   background-size: cover;
   font-size: 28px;
   display: -ms-flexbox;

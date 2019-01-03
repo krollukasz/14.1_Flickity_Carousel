@@ -19,15 +19,8 @@ flkty.on( 'scroll', function( progress ) {
 });
 
 // Reset button
-var buttonGroup = document.querySelector('.button-group');
-var buttons = buttonGroup.querySelector('.restart-button');
+var restart = document.querySelector('.restart-button');
 
-buttons = fizzyUIUtils.makeArray(buttons);
-buttonGroup.addEventListener('click', function (event) {
-  // filter for button clicks
-  if (!matchesSelector(event.target, '.restart-button')) {
-      return;
-  }
-  var index = buttons.indexOf(event.target);
+restart.addEventListener('click', function () {
   flkty.select(0);
 });

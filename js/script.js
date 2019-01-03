@@ -42,7 +42,6 @@ buttonGroup.addEventListener('click', function (event) {
       return;
   }
   var index = buttons.indexOf(event.target);
-<<<<<<< HEAD
   flkty.select(0);
 });
 

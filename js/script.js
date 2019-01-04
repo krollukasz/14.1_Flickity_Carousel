@@ -14,9 +14,9 @@ carousel.innerHTML = carouselElements;
 
 // Flickity
 // Initialize carousel
-var elem = document.querySelector('.main-carousel');
+var elem = document.querySelector(".main-carousel");
 var flkty = new Flickity( elem, {
-  cellAlign: 'left',
+  cellAlign: "left",
   contain: true,
   hash: true,
   imagesLoaded: true,
@@ -24,24 +24,17 @@ var flkty = new Flickity( elem, {
 });
 
 // Progress bar
-var progressBar = document.querySelector('.progress-bar')
+var progressBar = document.querySelector(".progress-bar")
 
-flkty.on( 'scroll', function( progress ) {
+flkty.on("scroll", function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
-  progressBar.style.width = progress * 100 + '%';
+  progressBar.style.width = progress * 100 + "%";
 });
 
 // Reset button
-var buttonGroup = document.querySelector('.button-group');
-var buttons = buttonGroup.querySelector('.restart-button');
+var restart = document.querySelector(".restart-button");
 
-buttons = fizzyUIUtils.makeArray(buttons);
-buttonGroup.addEventListener('click', function (event) {
-  // filter for button clicks
-  if (!matchesSelector(event.target, '.restart-button')) {
-      return;
-  }
-  var index = buttons.indexOf(event.target);
+restart.addEventListener("click", function () {
   flkty.select(0);
 });
 
@@ -53,7 +46,7 @@ buttonGroup.addEventListener('click', function (event) {
     var mapLocation = slideData[0].coords;
 
     // Map zoom and center
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById("map"), {
       zoom: 12,
       center: mapLocation
     });
@@ -67,7 +60,7 @@ buttonGroup.addEventListener('click', function (event) {
       }));
 
       // Change map position after slide change
-      flkty.on('change', function(index) {
+      flkty.on("change", function(index) {
         map.panTo(slideData[index].coords);
         map.setZoom(12);
       });

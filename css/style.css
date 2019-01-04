@@ -98,6 +98,7 @@ body {
   width: 0;
   height: 12px;
   background-color: grey;
+  position: relative;
 }
 
 /* restart button */

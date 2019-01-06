@@ -25,7 +25,7 @@ body {
 }
 
 .main-carousel {
-  height: 50%;
+  height: 50vh;
   min-height: 250px;
   background: #bdbcba;
 }
@@ -81,6 +81,7 @@ body {
   width: 0;
   height: 12px;
   background-color: grey;
+  position: relative;
 }
 
 /* restart button */

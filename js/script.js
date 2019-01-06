@@ -18,7 +18,6 @@ var elem = document.querySelector(".main-carousel");
 var flkty = new Flickity( elem, {
   cellAlign: "left",
   contain: true,
-  hash: true,
   imagesLoaded: true,
   percentPosition: false
 });
@@ -57,7 +56,10 @@ restart.addEventListener("click", function () {
         position: slideData[i].coords,
         map: map,
         id: i
-      }));
+      }))
+      markers[i].addListener("click", function() {
+        flkty.select(this.id)
+      });
 
       // Change map position after slide change
       flkty.on("change", function(index) {

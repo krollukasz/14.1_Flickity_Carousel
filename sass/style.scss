@@ -22,14 +22,6 @@ body {
   }
 }
 
-.hash-links {
-  margin-left: 20px;
-
-  a {
-    text-decoration: none;
-  }
-}
-
 .main-carousel {
   height: 46vh;
   min-height: 250px;
@@ -38,8 +30,7 @@ body {
 
 .carousel-cell {
   width: 100%;
-  height: 500px;
-  
+  height: 50vh;
   background-size: cover;
   font-size: 28px;
   display: flex;
@@ -51,16 +42,6 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-/* image text */
-.caption {
-  background: #FAFAFA;
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  font-size: 18px;
-  color: #000;
 }
 
 /* previous & next buttons */
@@ -84,9 +65,10 @@ body {
   display: none;
 }
 
+/* google map */
 .google-map {
   width: 100%;
-  height: 46vh;
+  height: 50vh;
   background-color: grey;
 }
 
@@ -101,6 +83,7 @@ body {
 /* restart button */
 .button-group {  
   position: absolute;
-  top: 34px;
+  top: 6px;
+  left: 6px;
   font-size: 18px;
 }

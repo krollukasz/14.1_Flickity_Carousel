@@ -24,14 +24,6 @@ body {
   padding-top: 10px;
 }
 
-.hash-links {
-  margin-left: 20px;
-}
-
-.hash-links a {
-  text-decoration: none;
-}
-
 .main-carousel {
   height: 50%;
   min-height: 250px;

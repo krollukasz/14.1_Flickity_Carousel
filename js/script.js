@@ -37,3 +37,33 @@ var restart = document.querySelector(".restart-button");
 restart.addEventListener("click", function () {
   flkty.select(0);
 });
+
+// Google map
+
+(function() {
+  window.initMap = function() {
+
+    var mapLocation = slideData[0].coords;
+
+    // Map zoom and center
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: mapLocation
+    });
+
+    var markers = [];
+    for ( var i = 0; i < slideData.length; i++ ) {
+      markers.push(new google.maps.Marker({
+        position: slideData[i].coords,
+        map: map,
+        id: i
+      }));
+
+      // Change map position after slide change
+      flkty.on("change", function(index) {
+        map.panTo(slideData[index].coords);
+        map.setZoom(12);
+      });
+    }
+  };
+})();
